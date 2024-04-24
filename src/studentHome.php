@@ -28,24 +28,23 @@
           <img class="h-16 w-16" src="../ICON/logo.png" alt="">
           <h1 class="text-3xl font-bold ml-3">UNIDining</h1>
         </div>  
-        <div class="flex items-center">
-          <div class="flex items-center hover:text-redSecondary">
-              <i class="fa-solid fa-house fa-rotate-by mr-2"></i>
-              <a href="studentHome.php" class="text-xl font-semibold uppercase">Home</a>
-          </div>
-          <div class="flex items-center ml-5 hover:text-redSecondary">
-              <i class="fa-solid fa-list mr-2"></i>
-              <a href="menu.php" class="text-xl font-semibold uppercase">Menu</a>
-          </div>
-          <div class="flex items-center ml-5 hover:text-redSecondary">
+        <div class="flex items-center space-x-5">
+        <div class="flex items-center hover:text-redSecondary">
+            <i class="fa-solid fa-house fa-rotate-by mr-2"></i>
+            <a href="studentHome.php" class="text-xl font-semibold uppercase">Home</a>
+        </div>
+        <div class="flex items-center ml-5 hover:text-redSecondary">
+            <i class="fa-solid fa-list mr-2"></i>
+            <a href="menu.php" class="text-xl font-semibold uppercase">Menu</a>
+        </div>
+        <div class="flex items-center ml-5 hover:text-redSecondary">
             <i class="fa-solid fa-list-check mr-2"></i>
             <a href="student_feedback.php" class="text-xl font-semibold uppercase">FeedBack</a>
-          </div>
-          <div class="flex items-center ml-5 hover:text-redSecondary">
+        </div>
+        <div class="flex items-center ml-5 hover:text-redSecondary">
             <i class="fa-solid fa-shopping-cart mr-2"></i>
             <a href="Buytoken.php" class="text-xl font-semibold uppercase">Buy Token</a>
-          </div>
-          <div>
+        </div>
             <?php
                 if(isset($_COOKIE['role'])) {
                 $role = $_COOKIE['role'];
