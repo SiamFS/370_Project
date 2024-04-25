@@ -11,20 +11,6 @@ CREATE TABLE IF NOT EXISTS TarcDining.`user` (
   UNIQUE INDEX user_email_UNIQUE (email)
 );
 
--- Create staff table
-CREATE TABLE IF NOT EXISTS TarcDining.`staff` (
-  email VARCHAR(45) NOT NULL,
-  Role VARCHAR(45) NULL,
-  serv_iD INT NULL,
-  staffcol VARCHAR(45) NULL,
-  PRIMARY KEY (email),
-  CONSTRAINT fk_staff_user
-    FOREIGN KEY (email)
-    REFERENCES TarcDining.`user` (email)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE
-);
-
 -- Create Admin table
 CREATE TABLE IF NOT EXISTS TarcDining.`Admin` (
   email VARCHAR(45) NOT NULL,

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TarcDining - Feedback</title>
+    <title>UNIDining - Feedback</title>
     <!-- Include design plugins -->
     <script src="https://kit.fontawesome.com/5f28ebb90a.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.3/dist/full.min.css" rel="stylesheet" type="text/css" />
@@ -28,7 +28,7 @@
         <nav class="h-24 px-60 flex justify-between items-center">
             <div class="flex items-center">
                 <img class="h-16 w-16" src="../ICON/logo.png" alt="">
-                <h1 class="text-3xl font-bold ml-3">TarcDining</h1>
+                <h1 class="text-3xl font-bold ml-3">UNIDining</h1>
             </div>
             <div class="flex items-center">
                 <div class="flex items-center hover:text-redSecondary">

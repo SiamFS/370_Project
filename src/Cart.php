@@ -27,7 +27,7 @@
     <nav class="h-24 px-60 flex justify-between items-center">
         <div class="flex items-center">
           <img class="h-16 w-16" src="../ICON/logo.png" alt="">
-          <h1 class="text-3xl font-bold ml-3">TarcDining</h1>
+          <h1 class="text-3xl font-bold ml-3">UNIDining</h1>
         </div>  
         <div class="flex items-center">
           <div class="flex items-center hover:text-redSecondary">

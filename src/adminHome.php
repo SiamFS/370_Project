@@ -27,7 +27,7 @@
       <nav class="h-24 px-40 flex justify-between items-center">
         <div class="flex items-center">
           <img class="h-16 w-16" src="../ICON/logo.png" alt="">
-          <h1 class="text-3xl font-bold ml-3">TarcDining</h1>
+          <h1 class="text-3xl font-bold ml-3">UNIDining</h1>
         </div>  
         <?php
             if(isset($_COOKIE['username'])) {
@@ -39,7 +39,7 @@
         <div class="flex items-center">
           <h1 class="text-2xl font-semibold uppercase">Welcome to admin dashboard, <?php echo $username ?></h1>
           <div class="ml-4">
-            <a href="admin_login.php" class="text-xl font-semibold uppercase bg-red-500 text-white rounded-md px-4 py-2 hover:bg-red-600">Logout</a>
+            <a href="login.php" class="text-xl font-semibold uppercase bg-red-500 text-white rounded-md px-4 py-2 hover:bg-red-600">Logout</a>
           </div>
         </div>
         </div>

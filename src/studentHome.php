@@ -95,7 +95,7 @@
     <main>
       <section class="h-80">
         <div class="bg-cover bg-center h-[30rem]" style="background-image: linear-gradient(to bottom right,rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2)),url(../ICON/banner.jpg);">
-          <h1 class="text-7xl font-bold text-center py-10 text-white">Welcome to TarcDining</h1>
+          <h1 class="text-7xl font-bold text-center py-10 text-white">Welcome to UniDining</h1>
           <div>
             <?php
              $currentHour = date('G');
