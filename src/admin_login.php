@@ -43,12 +43,12 @@
                   $role = $row['role'];
                   $username = $row['username']; 
                   $email = $row['email'];
-                  setcookie('username', '', time() + 86400, "/");
-                  setcookie('username', $username, time() + 86400 * 30, "/");
-                  setcookie('email', '', time() + 86400 * 30, "/");
-                  setcookie('email', $email, time() + 86400 * 30, "/");
-                  setcookie('role', '', time() + 86400 * 30, "/");
-                  setcookie('role', $role, time() + 86400 * 30, "/");
+                  setcookie('username', '', time() + 10, "/");
+                  setcookie('username', $username, time() + 10, "/");
+                  setcookie('email', '', time() + 10, "/");
+                  setcookie('email', $email, time() + 10, "/");
+                  setcookie('role', '', time() + 10, "/");
+                  setcookie('role', $role, time() + 10, "/");
                   if ($role == 'admin'){
                       header("Location: adminHome.php");
                       exit(); // Stop further execution

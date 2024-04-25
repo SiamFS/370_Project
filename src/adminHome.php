@@ -36,8 +36,12 @@
                 echo "No username cookie set";
             }
             ?>
-        <div>
+        <div class="flex items-center">
           <h1 class="text-2xl font-semibold uppercase">Welcome to admin dashboard, <?php echo $username ?></h1>
+          <div class="ml-4">
+            <a href="admin_login.php" class="text-xl font-semibold uppercase bg-red-500 text-white rounded-md px-4 py-2 hover:bg-red-600">Logout</a>
+          </div>
+        </div>
         </div>
       </nav>
     </header>
@@ -56,7 +60,7 @@
               </div>
               <div class="flex items-center hover:text-redSecondary">
                 <i class="fa-solid fa-plus mr-2"></i>
-                <a href='addProducts.php' class="text-lg font-semibold uppercase">Add </a>
+                <a href='addfoods.php' class="text-lg font-semibold uppercase">Add </a>
               </div>
               <div class="flex items-center hover:text-redSecondary">
                 <i class="fa-solid fa-plus mr-2"></i>
@@ -70,6 +74,7 @@
                 <i class="fa-solid fa-plus mr-2"></i>
                 <a href='admin_feedback.php' class="text-lg font-semibold uppercase">Feedback</a>
               </div>
+              
             </div>
           </div>
           <?php
@@ -90,10 +95,11 @@
             $total_sales= $row['total_sales']
           ?>
           <div class="col-span-5 bg-white rounded-tl-3xl h-screen pl-12 pt-12">
-            <div>
-              <h1>Total revenue <?php echo $total_salary ?></h1>
-              <h1>Total sales made  <?php echo $total_sales ?></h1>
-              <h1>total student <?php echo $student_count ?></h1>
+            <div class="font-bold">
+              <h1 class="text-1xl">Total revenue <?php echo $total_salary ?></h1>
+              <h1 class="text-1xl">Total sales made <?php echo $total_sales ?></h1>
+              <h1 class="text-1xl">Total students: <?php echo $student_count ?></h1>
+            </div>
             </div>
           </div>
         </div>

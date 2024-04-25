@@ -56,7 +56,7 @@
               </div>
               <div class="flex items-center hover:text-redSecondary">
                 <i class="fa-solid fa-plus mr-2"></i>
-                <a href='addProducts.php' class="text-lg font-semibold uppercase">Add </a>
+                <a href='addfoods.php' class="text-lg font-semibold uppercase">Add </a>
               </div>
               <div class="flex items-center hover:text-redSecondary">
                 <i class="fa-solid fa-plus mr-2"></i>

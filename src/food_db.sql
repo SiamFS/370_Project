@@ -1,8 +1,6 @@
 -- Database creation and selection
 CREATE DATABASE IF NOT EXISTS TarcDining;
 USE TarcDining;
-
-
 -- Create user table
 CREATE TABLE IF NOT EXISTS TarcDining.`user` (
   email VARCHAR(45) NOT NULL,
@@ -72,11 +70,11 @@ CREATE TABLE IF NOT EXISTS TarcDining.`curMenu` (
   img VARCHAR(255) NULL,
   name VARCHAR(45) NULL,
   type VARCHAR(45) NULL,
-  rating INT NULL,
   adminEmail VARCHAR(45) NULL,
   token INT NULL,
   status VARCHAR(45) NULL,
   sellCount INT NULL,
+  time VARCHAR(45) Null ,
   PRIMARY KEY (f_id),
   CONSTRAINT fk_curMenu_admin
     FOREIGN KEY (adminEmail)
@@ -120,6 +118,7 @@ CREATE TABLE IF NOT EXISTS TarcDining.`cart` (
     ON DELETE CASCADE
     ON UPDATE CASCADE
 );
+
 -- Insert admin data into the Admin table
 -- Insert user data
 INSERT INTO `user` (`email`, `username`, `password`, `role`) VALUES ('admin@gmail.com', 'Admin', '111', 'admin');

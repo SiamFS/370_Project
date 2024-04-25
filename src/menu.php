@@ -23,7 +23,7 @@
     </script>
 </head>
 <body>
-    <header>
+  <header>
     <nav class="h-24 px-60 flex justify-between items-center">
         <div class="flex items-center">
           <img class="h-16 w-16" src="../ICON/logo.png" alt="">
@@ -64,11 +64,51 @@
             <h1 class="text-center text-7xl font-extrabold my-10">
                 Explore all the items
             </h1>
+            <div>
+            <?php
+             $currentHour = date('G');
+    
+            
+             $breakfastStart = 6; 
+             $breakfastEnd = 9;
+             $curTime='breakfast';   
+             
+             $lunchStart = 12; 
+             $lunchEnd = 14;  
+             
+             $afternoonSnackStart = 15; 
+             $afternoonSnackEnd = 17;   
+             
+             $dinnerStart = 18; 
+             $dinnerEnd = 21;  
+             
+             // Determine the current meal time
+             if ($currentHour >= $breakfastStart && $currentHour < $breakfastEnd) {
+             $state='morning';
+             $curTime='Breakfast';   
+                 
+             } elseif ($currentHour >= $lunchStart && $currentHour < $lunchEnd) {
+                 $state="afternoon";
+
+                 $curTime='Lunch';   
+                 
+             } elseif ($currentHour >= $afternoonSnackStart && $currentHour < $afternoonSnackEnd) {
+                 $state="afternoon";
+                 $curTime="Snacks";
+             } elseif ($currentHour >= $dinnerStart && $currentHour < $dinnerEnd) {
+                 $state="night";
+                 $curTime="Dinner";
+             } else {
+                 return "Outside of meal times";
+             }
+         
+            ?>
+          </div>
             <div class="grid grid-cols-3 gap-6">         
               <?php
                 require_once('DBconnect.php');
                 $useremail = $_COOKIE['email'];
-                $query = "SELECT * FROM curMenu where status='published'";
+                $query = "SELECT * FROM curMenu where status='published' and time= '$curTime'";
                 $result = mysqli_query($conn, $query);
                 if (mysqli_num_rows($result) > 0) {
                   while ($row = mysqli_fetch_assoc($result)) {

@@ -30,8 +30,8 @@
           <h1 class="text-3xl font-bold ml-3">TarcDining</h1>
         </div>  
         <?php
-            if(isset($_COOKIE['userID'])) {
-                $username = $_COOKIE['name'];
+            if(isset($_COOKIE['username'])) {
+                $username = $_COOKIE['username'];
             } else {
                 echo "No username cookie set";
             }
