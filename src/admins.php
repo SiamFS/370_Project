@@ -33,7 +33,8 @@
             if(isset($_COOKIE['username'])) {
                 $username = $_COOKIE['username'];
             } else {
-                echo "No username cookie set";
+                header("Location: admin_login.php");
+                exit(); // Stop further execution
             }
         ?> 
         <div>
@@ -80,7 +81,6 @@
             $resultUser = mysqli_query($conn, $queryUser);
 
             echo "<div class='col-span-5 bg-white rounded-tl-3xl h-screen pl-12 pt-12 overflow-auto'>";
-            echo "<div class='col-span-5 bg-white rounded-tl-3xl h-screen pl-12 pt-12 overflow-auto'>";
             echo "<div class='grid grid-cols-2 gap-8'>";
             echo "<div>";
             echo "<h2 class='text-2xl font-semibold mb-4'>Admins</h2>";
@@ -117,8 +117,8 @@
             echo "</div>";
             echo "</div>";
 
-            echo "</table>";
-            echo "</div>";
+            // Close database connection
+            mysqli_close($conn);
           ?>
         </div>
       </section>

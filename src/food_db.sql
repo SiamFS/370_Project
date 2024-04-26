@@ -38,17 +38,21 @@ CREATE TABLE IF NOT EXISTS TarcDining.`student` (
 );
 
 -- Create feedback table
+-- Create feedback table
+-- Create feedback table
+-- Create feedback table
 CREATE TABLE IF NOT EXISTS TarcDining.`feedback` (
+  feedback_id INT AUTO_INCREMENT PRIMARY KEY,
   email VARCHAR(45) NOT NULL,
   text VARCHAR(255) NULL,
-  mealRating INT NULL,
-  PRIMARY KEY (email),
+  mealRating VARCHAR(20) NULL, -- Adjusted data type to VARCHAR
   CONSTRAINT fk_feedback_student
     FOREIGN KEY (email)
     REFERENCES TarcDining.`student` (email)
     ON DELETE CASCADE
     ON UPDATE CASCADE
 );
+
 
 -- Create curMenu table
 CREATE TABLE IF NOT EXISTS TarcDining.`curMenu` (

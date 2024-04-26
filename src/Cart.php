@@ -54,7 +54,9 @@
                             <h1 class='text-xl font-semibold uppercase'>$username</h1>
                         </div>";
                     } else {
-                        echo "No username cookie set";
+                        // Redirect to login page if user is not logged in
+                        header("Location: login.php");
+                        exit(); // Stop further execution
                     }
                 ?>
             </div>

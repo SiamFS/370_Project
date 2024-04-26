@@ -36,8 +36,6 @@
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $email = $_POST['email'];
                     $password = $_POST['password'];
-
-                    // Check if the email ends with @g.bracu.ac.bd
                     $domain = explode("@", $email)[1];
                     if ($domain !== "g.bracu.ac.bd") {
                         echo "<span style='color: red;'>Please use your G-suite email.</span>";
@@ -54,8 +52,7 @@
                             if (mysqli_num_rows($check_password_result) > 0) {
                                 echo "<span style='color: red;'>A user with this password already exists.</span>";
                             } else {
-                                // Insert new user if account doesn't exist
-                                $role = 'student'; // Since we removed admin option
+                                $role = 'student'; 
                                 $username = $_POST['username'];
                                 $sql = "INSERT INTO user (email, username, password, role) VALUES ('$email', '$username', '$password', '$role')";
                                 $result = mysqli_query($conn, $sql);

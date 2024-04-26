@@ -33,7 +33,8 @@
             if(isset($_COOKIE['username'])) {
                 $username = $_COOKIE['username'];
             } else {
-                echo "No username cookie set";
+                header("Location: admin_login.php");
+                exit(); // Stop further execution
             }
         ?> 
         <div>

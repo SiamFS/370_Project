@@ -29,19 +29,21 @@
           <img class="h-16 w-16" src="../ICON/logo.png" alt="">
           <h1 class="text-3xl font-bold ml-3">UNIDining</h1>
         </div>  
-        <?php
+        <div class="flex items-center">
+          <?php
+            // Check if username cookie is set
             if(isset($_COOKIE['username'])) {
                 $username = $_COOKIE['username'];
             } else {
-                echo "No username cookie set";
+                // Redirect to login page if user is not logged in
+                header("Location: admin_login.php");
+                exit(); // Stop further execution
             }
-            ?>
-        <div class="flex items-center">
+          ?>
           <h1 class="text-2xl font-semibold uppercase">Welcome to admin dashboard, <?php echo $username ?></h1>
           <div class="ml-4">
-            <a href="login.php" class="text-xl font-semibold uppercase bg-red-500 text-white rounded-md px-4 py-2 hover:bg-red-600">Logout</a>
+            <a href="admin_login.php?action=logout" class="text-xl font-semibold uppercase bg-red-500 text-white rounded-md px-4 py-2 hover:bg-red-600">Logout</a>
           </div>
-        </div>
         </div>
       </nav>
     </header>
@@ -66,7 +68,17 @@
                 <i class="fa-solid fa-plus mr-2"></i>
                 <a href='admin_create_account.php' class="text-lg font-semibold uppercase">Create Account</a>
               </div>
-              <div class="flex items-center hover:text-redSecondary">
+              <div class="flex items-center hover:text-red"><?php
+                // Check if username cookie is set
+                if(isset($_COOKIE['username'])) {
+                    $username = $_COOKIE['username'];
+                    echo 
+                    "<div class='flex items-center'>
+                        <i class='fa-solid fa-user mr-2 text-2xl'></i>
+                        <h1 class='text-xl font-semibold uppercase'>$username</h1>
+                    </div>";
+                }
+              ?>
                 <i class="fa-solid fa-plus mr-2"></i>
                 <a href='admins.php' class="text-lg font-semibold uppercase">Users</a>
               </div>

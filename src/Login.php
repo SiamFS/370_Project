@@ -27,7 +27,7 @@
       <img src="../ICON/logo.png" alt="">
     </div>
     <div class="bg-yellowPrimary justify-start items-center flex px-4 md:px-10 rounded-r-xl md:col-span-2">
-      <div class="flex flex-col w-full md:max-w-md mx-auto">
+      <div class="flex-col mx-auto">
       <h1 class="text-4xl font-bold mb-6">Login</h1>
       <!-- Display error message if exists -->
       <?php if(isset($_GET['error']) && $_GET['error'] == 'invalid'): ?>
@@ -66,12 +66,9 @@ if(isset($_POST['email']) && isset($_POST['password'])){
         $role = $row['role'];
         $username = $row['username']; 
         $email = $row['email'];
-        setcookie('username', '', time() + 86400, "/"); // Expires in one day
-        setcookie('username', $username, time() + 86400, "/"); 
-        setcookie('email', '', time() + 86400, "/"); 
-        setcookie('email', $email, time() + 86400, "/"); 
-        setcookie('role', '', time() + 86400, "/"); 
-        setcookie('role', $role, time() + 86400, "/"); 
+        setcookie('username', $username, time() + 300, "/"); 
+        setcookie('email', $email, time() + 300, "/"); 
+        setcookie('role', $role, time() + 300, "/"); 
         if ($role == 'student'){
             header("Location: studentHome.php");
             exit(); // Stop further execution
