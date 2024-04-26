@@ -68,17 +68,7 @@
                 <i class="fa-solid fa-plus mr-2"></i>
                 <a href='admin_create_account.php' class="text-lg font-semibold uppercase">Create Account</a>
               </div>
-              <div class="flex items-center hover:text-red"><?php
-                // Check if username cookie is set
-                if(isset($_COOKIE['username'])) {
-                    $username = $_COOKIE['username'];
-                    echo 
-                    "<div class='flex items-center'>
-                        <i class='fa-solid fa-user mr-2 text-2xl'></i>
-                        <h1 class='text-xl font-semibold uppercase'>$username</h1>
-                    </div>";
-                }
-              ?>
+              <div class="flex items-center hover:text-redSecondary">
                 <i class="fa-solid fa-plus mr-2"></i>
                 <a href='admins.php' class="text-lg font-semibold uppercase">Users</a>
               </div>
