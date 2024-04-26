@@ -43,9 +43,9 @@
                   $role = $row['role'];
                   $username = $row['username']; 
                   $email = $row['email'];
-                  setcookie('username', $username, time() + 300, "/");
-                  setcookie('email', $email, time() + 300, "/");
-                  setcookie('role', $role, time() + 300, "/");
+                  setcookie('username', $username, time() + 3000, "/");
+                  setcookie('email', $email, time() + 3000, "/");
+                  setcookie('role', $role, time() + 3000, "/");
                   if ($role == 'admin'){
                       header("Location: adminHome.php");
                       exit(); // Stop further execution

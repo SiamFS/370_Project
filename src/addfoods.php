@@ -77,11 +77,7 @@
             <div class="my-24">
               <form action="handleAddFoods.php" method="POST">
                 <?php 
-                  if(isset($_COOKIE['email'])) {
-                      $email = $_COOKIE['email'];
-                  } else {
-                      echo header("Location: login.php");
-                  }
+                      $email = $_COOKIE['email']
                 ?>
                 <div class="grid grid-cols-2">
                   <div class="flex items-center mr-6">
@@ -90,11 +86,11 @@
                   </div>
                   <div>
                     <select class="select w-full my-4 border-2 border-gray-300 px-4 font-semibold text-xl py-2" name="itemType" required>
-                                                    <!--changed-->
+                    
                       <option disabled selected>Select Meal Category</option>
                       <option>Main dish</option>
                       <option>Side dish</option>
-        
+                      
                       <option>Beverages & Snacks</option>
                       <option>Condiments</option>
                     </select>
@@ -102,7 +98,7 @@
                 </div>
                 <div>
                     <select class="select w-full my-4 border-2 border-gray-300 px-4 font-semibold text-xl py-2" name="itemTiming" required>
-                                                    <!--changed-->
+
                       <option disabled selected>Select Meal timing</option>
                       <option>Breakfast</option>
                       <option>Lunch</option>
@@ -126,7 +122,7 @@
                     <h1 class="text-2xl font-semibold w-80">Product Image URl:</h1>
                     <input type="text" name="itemImage" class="w-full h-12 border-2 border-gray-300 rounded-lg px-4 my-4" required>
                 </div>
-                <input type="submit" value="submit" class="bg-yellow-300 py-3 w-full rounded-lg my-4">
+                <input type="submit" value="submit" class="bg-yellowPrimary py-3 w-full rounded-lg my-4">
               </form>
             </div>
           </section>

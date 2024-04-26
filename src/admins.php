@@ -29,12 +29,12 @@
           <img class="h-16 w-16" src="../ICON/logo.png" alt="">
           <h1 class="text-3xl font-bold ml-3">UNIDining</h1>
         </div>  
+        <?php require_once('DBconnect.php'); ?>
         <?php
             if(isset($_COOKIE['username'])) {
                 $username = $_COOKIE['username'];
             } else {
-                header("Location: admin_login.php");
-                exit(); // Stop further execution
+                echo "No username cookie set";
             }
         ?> 
         <div>
@@ -70,8 +70,6 @@
             </div>
           </div>
           <?php
-            require_once('DBconnect.php');
-
             // Retrieve admins data from the database
             $queryAdmin = "SELECT email, username FROM user WHERE role = 'admin'";
             $resultAdmin = mysqli_query($conn, $queryAdmin);
@@ -79,47 +77,44 @@
             // Retrieve non-admin users data from the database
             $queryUser = "SELECT email, username FROM user WHERE role <> 'admin'";
             $resultUser = mysqli_query($conn, $queryUser);
-
-            echo "<div class='col-span-5 bg-white rounded-tl-3xl h-screen pl-12 pt-12 overflow-auto'>";
-            echo "<div class='grid grid-cols-2 gap-8'>";
-            echo "<div>";
-            echo "<h2 class='text-2xl font-semibold mb-4'>Admins</h2>";
-            if (mysqli_num_rows($resultAdmin) > 0) {
-              echo "<table>";
-              echo "<tr><th>Email</th><th>Name</th></tr>";
-              while ($row = mysqli_fetch_assoc($resultAdmin)) {
-                echo "<tr>";
-                echo "<td>" . $row['email'] . "</td>";
-                echo "<td>" . $row['username'] . "</td>";
-                echo "</tr>";
-              }
-              echo "</table>";
-            } else {
-              echo "No admins found.";
-            }
-            echo "</div>";
-            echo "<div>";
-            echo "<h2 class='text-2xl font-semibold mb-4'>Users</h2>";
-            if (mysqli_num_rows($resultUser) > 0) {
-              echo "<table>";
-              echo "<tr><th>Email</th><th>Name</th></tr>";
-              while ($row = mysqli_fetch_assoc($resultUser)) {
-                echo "<tr>";
-                echo "<td>" . $row['email'] . "</td>";
-                echo "<td>" . $row['username'] . "</td>";
-                echo "</tr>";
-              }
-              echo "</table>";
-            } else {
-              echo "No users found.";
-            }
-            echo "</div>";
-            echo "</div>";
-            echo "</div>";
-
-            // Close database connection
-            mysqli_close($conn);
           ?>
+          <div class="col-span-5 bg-white rounded-tl-3xl h-screen pl-12 pt-12 overflow-auto">
+            <div class="grid grid-cols-2 gap-8">
+              <div>
+                <h2 class='text-2xl font-semibold mb-4'>Admins</h2>
+                <?php if (mysqli_num_rows($resultAdmin) > 0) { ?>
+                  <table>
+                    <tr><th>Email</th><th>Name</th></tr>
+                    <?php while ($row = mysqli_fetch_assoc($resultAdmin)) { ?>
+                      <tr>
+                        <td class="py-2 px-4 border-b border-gray-300"><?php echo $row['email']; ?></td>
+                        <td class="py-2 px-4 border-b border-gray-300"><?php echo $row['username']; ?></td>
+                      </tr>
+                    <?php } ?>
+                  </table>
+                <?php } else { ?>
+                  <p>No admins found.</p>
+                <?php } ?>
+              </div>
+              <div>
+                <h2 class='text-2xl font-semibold mb-4 px-4'>Users</h2>
+                <?php if (mysqli_num_rows($resultUser) > 0) { ?>
+                  <table>
+                    <tr><th>Email</th><th>Name</th></tr>
+                    <?php while ($row = mysqli_fetch_assoc($resultUser)) { ?>
+                      <tr>
+                        <td class="py-2 px-4 border-b border-gray-300"><?php echo $row['email']; ?></td>
+                        <td class="py-2 px-4 border-b border-gray-300"><?php echo $row['username']; ?></td>
+                      </tr>
+                    <?php } ?>
+                  </table>
+                <?php } else { ?>
+                  <p>No users found.</p>
+                <?php } ?>
+              </div>
+            </div>
+          </div>
+          <?php mysqli_close($conn); ?>
         </div>
       </section>
     </main>
