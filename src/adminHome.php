@@ -42,7 +42,7 @@
           ?>
           <h1 class="text-2xl font-semibold uppercase">Welcome to admin dashboard, <?php echo $username ?></h1>
           <div class="ml-4">
-            <a href="admin_login.php?action=logout" class="text-xl font-semibold uppercase bg-red-500 text-white rounded-md px-4 py-2 hover:bg-red-600">Logout</a>
+            <a href="login.php?action=logout" class="text-xl font-semibold uppercase bg-red-500 text-white rounded-md px-4 py-2 hover:bg-red-600">Logout</a>
           </div>
         </div>
       </nav>
