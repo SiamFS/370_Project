@@ -78,7 +78,7 @@
                     </div>
                     <input type="submit" value="Sign up" class="px-6 py-2 bg-greenSecondary font-bold uppercase rounded-md text-white cursor-pointer transition duration-300 ease-in">
                     <div class="my-2">
-                            <span class="text-redSecondary hover:text-blue-700 hover:underline"><a href="Login.php">LOG IN</a></span></h1>
+                            <span class="text-greenSecondary: 'rgb(34 197 94) hover:text-blue-700 hover:underline"><a href="Login.php">LOG IN</a></span></h1>
                     </div>
                 </form>
             </div>
