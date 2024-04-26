@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS TarcDining.`feedback` (
   feedback_id INT AUTO_INCREMENT PRIMARY KEY,
   email VARCHAR(45) NOT NULL,
   text VARCHAR(255) NULL,
-  mealRating VARCHAR(20) NULL, -- Adjusted data type to VARCHAR
+  mealRating VARCHAR(20) NULL,
   CONSTRAINT fk_feedback_student
     FOREIGN KEY (email)
     REFERENCES TarcDining.`student` (email)

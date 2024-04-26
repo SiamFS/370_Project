@@ -111,9 +111,18 @@
                 </table>
             </div>
             <div class="my-20">
-                <h1 class="text-2xl font-semibold">Total Token: <?php echo $totalCost; ?></h1>
+                <h1 class="text-2xl font-semibold uppercase">Total Token: <?php echo $totalCost; ?></h1>    
+                <?php
+                    require_once('DBconnect.php');
+                    $useremail = $_COOKIE['email'];
+                    $query = "SELECT tokenCnt FROM student WHERE email = '$useremail'";
+                    $result = mysqli_query($conn, $query);
+                    $row = mysqli_fetch_assoc($result);
+                    $tokenLeft = $row['tokenCnt'];
+                ?>
+                <br>
+                <h1 class="text-2xl font-semibold uppercase">Token Left:<?php echo $tokenLeft; ?></h1>
             </div>
-            <!-- Confirmation form -->
             <div>
                 <form action="payment.php" method="post">
                     <input type="hidden" name="total_cost" value="<?php echo $totalCost; ?>">
